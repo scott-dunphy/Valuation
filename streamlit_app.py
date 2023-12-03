@@ -122,12 +122,9 @@ write_value = "Enter query"
 query_input = st.text_input("Enter your query: ")
 
 url = ''
-if query_input:
-    try:
-        irr = run_conversation(query_input)
-        write_value = irr
-    except:
-        write_value = "Error processing query. Please try again."
+irr = run_conversation(query_input)
+write_value = irr
+
    
     
 st.write(write_value)
