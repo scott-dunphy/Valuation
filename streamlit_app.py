@@ -116,6 +116,8 @@ def run_conversation(prompt):
 st.set_page_config(page_title='Multifamily AI IRR')
 st.title('Multifamily AI IRR')
 
+write_value = "Enter query"
+
 
 query_input = st.text_input("Enter your query: ")
 
