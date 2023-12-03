@@ -88,7 +88,7 @@ def run_conversation(prompt):
 
     if response_message.function_call:
         available_functions = {
-            "ncreif_api": ncreif_api,
+            "irr": irr,
         }  
         function_name = response_message.function_call.name
         fuction_to_call = available_functions[function_name]
