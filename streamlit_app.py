@@ -93,6 +93,7 @@ def run_conversation(prompt):
         function_name = response_message.function_call.name
         fuction_to_call = available_functions[function_name]
         function_args = json.loads(response_message.function_call.arguments)
+        st.write(function_args)
         function_response = fuction_to_call(
             unit_count=function_args.get("unit_count"),
             purchase_price=function_args.get("purchase_price"),
