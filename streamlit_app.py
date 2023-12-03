@@ -94,7 +94,14 @@ def run_conversation(prompt):
         fuction_to_call = available_functions[function_name]
         function_args = json.loads(response_message.function_call.arguments)
         function_response = fuction_to_call(
-            url=function_args.get("url"),
+            unit_count=function_args.get("unit_count"),
+            purchase_price=function_args.get("purchase_price"),
+            market_rent_per_unit=function_args.get("market_rent_per_unit"),
+            rent_growth_per_year=function_args.get("rent_growth_per_year"),
+            year_1_expense_ratio=function_args.get("year_1_expense_ratio"),
+            expense_growth_per_year=function_args.get("expense_growth_per_year"),
+            capex_per_unit=function_args.get("capex_per_unit"),
+            exit_cap_rate=function_args.get("exit_cap_rate"),
         )
 
         messages.append(response_message) 
