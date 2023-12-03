@@ -113,8 +113,8 @@ def run_conversation(prompt):
         #st.write(function_response)
         return function_response
         
-st.set_page_config(page_title='AI-POWERED NCREIF QUERY TOOL')
-st.title('AI-POWERED NCREIF QUERY TOOL')
+st.set_page_config(page_title='Multifamily AI IRR')
+st.title('Multifamily AI IRR')
 
 
 query_input = st.text_input("Enter your query: ")
