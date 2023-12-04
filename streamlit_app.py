@@ -1,5 +1,4 @@
 from openai import OpenAI
-from flask import jsonify
 client = OpenAI()
 import json
 import pandas as pd
@@ -17,7 +16,7 @@ def irr(unit_count, purchase_price, market_rent_per_unit, rent_growth_per_year,
     st.write(url)
     r = requests.get(url)
     
-    return jsonify(r.json())
+    return json.dumps(r.json())
 
 
 def run_conversation(prompt):
