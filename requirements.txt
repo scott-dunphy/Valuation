@@ -1,5 +1,5 @@
 openai
 requests
-pydantic=2.5.2
+pydantic
 flask
 streamlit-pydantic
