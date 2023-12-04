@@ -114,9 +114,9 @@ def run_conversation(prompt):
                 "content": function_response,
             }
         )
-        
+        st.write(messages)
         second_response = client.chat.completions.create(
-        model="gpt-3.5-turbo-1106",
+        model="gpt-4-1106-preview",
         messages=messages,
                 )  # get a new response from the model where it can see the function response
         return second_response
