@@ -115,11 +115,10 @@ def run_conversation(prompt):
             }
         )
         
-        #second_response = client.chat.completions.create(
-        #model="gpt-3.5-turbo-1106",
-        #messages=messages,
-        #        )  # get a new response from the model where it can see the function response
-        #st.write(function_response)
+        second_response = client.chat.completions.create(
+        model="gpt-4-1106-preview",
+        messages=messages,
+                )  # get a new response from the model where it can see the function response
         return function_response
         
 st.set_page_config(page_title='Multifamily AI IRR')
