@@ -1,5 +1,4 @@
 openai
 requests
 pydantic
-flask
 streamlit-pydantic
