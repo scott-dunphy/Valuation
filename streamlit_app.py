@@ -117,6 +117,7 @@ def run_conversation(prompt):
         st.write(messages)
         second_response = client.chat.completions.create(
         model="gpt-4-1106-preview",
+        temperature=0.9,
         messages=messages,
                 )  # get a new response from the model where it can see the function response
         return second_response
