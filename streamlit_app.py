@@ -20,10 +20,11 @@ def irr(unit_count, purchase_price, market_rent_per_unit, rent_growth_per_year,
 
 
 def run_conversation(prompt):
-    
-    # Step 1: send the conversation and available functions to GPT
-    #prompt = input("What is your query?: ")
-    messages = [{"role": "user", "content": f"{prompt}"},
+    # Initialize conversation history in session state if not present
+    if 'conversation_history' not in st.session_state:
+        st.session_state.conversation_history = []
+      
+    messages = st.session_state.conversation_history + [{"role": "user", "content": f"{prompt}"},
                 {"role": "system", "content": """
                  Take a deep breath and go step-by-step.
                  You are a helpful assistant creating a function call to an API.
@@ -117,7 +118,16 @@ def run_conversation(prompt):
         second_response = client.chat.completions.create(
         model="gpt-4-1106-preview",
         messages=messages,
-                )  # get a new response from the model where it can see the function response
+                )  
+
+        st.session_state.conversation_history += [
+          response_message,
+            {
+                "role": "function",
+                "name": function_name,
+                "content": function_response,
+            }
+        ]
         return second_response.choices[0].message.content
   
 st.set_page_config(page_title='Multifamily AI IRR')
