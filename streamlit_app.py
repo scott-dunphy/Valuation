@@ -14,6 +14,7 @@ os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 def irr(unit_count, purchase_price, market_rent_per_unit, rent_growth_per_year, 
                  year_1_expense_ratio, expense_growth_per_year, capex_per_unit, exit_cap_rate):
     url = f"https://scott-irr.replit.app/irr?unit_count={unit_count}&purchase_price={purchase_price}&market_rent_per_unit={market_rent_per_unit}&rent_growth_per_year={rent_growth_per_year}&year_1_expense_ratio={year_1_expense_ratio}&expense_growth_per_year={expense_growth_per_year}&capex_per_unit={capex_per_unit}&exit_cap_rate={exit_cap_rate}"
+    st.write(url)
     r = requests.get(url)
     
     return r.json()
