@@ -118,7 +118,7 @@ def run_conversation(prompt):
         model="gpt-4-1106-preview",
         messages=messages,
                 )  # get a new response from the model where it can see the function response
-        return second_response
+        return second_response.choices[0].message
         
 st.set_page_config(page_title='Multifamily AI IRR')
 st.title('Multifamily AI IRR')
