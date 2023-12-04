@@ -19,7 +19,7 @@ def irr(unit_count, purchase_price, market_rent_per_unit, rent_growth_per_year,
     return json.dumps(r.json())
 
 
-def run_conversation(prompt):
+def run_conversation(prompt, messages):
     
     # Step 1: send the conversation and available functions to GPT
     #prompt = input("What is your query?: ")
@@ -118,8 +118,12 @@ def run_conversation(prompt):
         model="gpt-4-1106-preview",
         messages=messages,
                 )  # get a new response from the model where it can see the function response
-        return second_response.choices[0].message.content
-        
+        return second_response.choices[0].message.content, messages
+
+# Initialize chat history
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+  
 st.set_page_config(page_title='Multifamily AI IRR')
 st.title('Multifamily AI IRR')
 
@@ -129,10 +133,15 @@ write_value = "Enter query"
 query_input = st.text_input("Enter your query: ")
 
 url = ''
-irr = run_conversation(query_input)
-write_value = irr
+irr, messages = run_conversation(query_input, messages)
 
-   
-    
+st.session_states.messages.append(messages)
+
+write_value = irr
 st.write(write_value)
+
+
+
+    
+
 
