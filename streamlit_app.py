@@ -98,11 +98,11 @@ def run_conversation(prompt):
             unit_count=function_args.get("unit_count"),
             purchase_price=function_args.get("purchase_price"),
             market_rent_per_unit=function_args.get("market_rent_per_unit"),
-            rent_growth_per_year=function_args.get("rent_growth_per_year")/100,
-            year_1_expense_ratio=function_args.get("year_1_expense_ratio")/100,
-            expense_growth_per_year=function_args.get("expense_growth_per_year")/100,
+            rent_growth_per_year=function_args.get("rent_growth_per_year"),
+            year_1_expense_ratio=function_args.get("year_1_expense_ratio"),
+            expense_growth_per_year=function_args.get("expense_growth_per_year"),
             capex_per_unit=function_args.get("capex_per_unit"),
-            exit_cap_rate=function_args.get("exit_cap_rate")/100,
+            exit_cap_rate=function_args.get("exit_cap_rate"),
         )
 
         messages.append(response_message) 
@@ -142,6 +142,63 @@ irr = run_conversation(query_input)
 
 write_value = irr
 st.write(write_value)
+
+import streamlit as st
+
+# HTML code for the table
+html_table = """
+<table border="1">
+    <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td>unit_count</td>
+        <td>Number of units in the apartment.</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>purchase_price</td>
+        <td>Total price for acquiring the property.</td>
+        <td>1,000,000</td>
+    </tr>
+    <tr>
+        <td>market_rent_per_unit</td>
+        <td>Average expected rent per unit.</td>
+        <td>1,200</td>
+    </tr>
+    <tr>
+        <td>rent_growth_per_year</td>
+        <td>Annual rent growth rate.</td>
+        <td>3%</td>
+    </tr>
+    <tr>
+        <td>year_1_expense_ratio</td>
+        <td>Ratio of expenses to revenue in the first year.</td>
+        <td>50%</td>
+    </tr>
+    <tr>
+        <td>expense_growth_per_year</td>
+        <td>Annual growth rate of expenses.</td>
+        <td>2%</td>
+    </tr>
+    <tr>
+        <td>capex_per_unit</td>
+        <td>Annual capital expenditure per unit.</td>
+        <td>500</td>
+    </tr>
+    <tr>
+        <td>exit_cap_rate</td>
+        <td>Cap rate for estimating the property's sale value.</td>
+        <td>5%</td>
+    </tr>
+</table>
+"""
+
+# Display HTML table in Streamlit app
+st.markdown(html_table, unsafe_allow_html=True)
+
 
 
 
