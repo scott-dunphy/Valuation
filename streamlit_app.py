@@ -149,7 +149,7 @@ Example Prompt:</n>
 Calculate the IRR for an Investment with the Following Inputs:
 
 Unit Count: 20</br>
-Purchase Price: $1,000,000</br>
+Purchase Price: $1,000,000 </br></br>
 Market Rent Per Unit: $1,200</br>
 Rent Growth Per Year: 3%</br>
 Year 1 Expense Ratio: 50%</br>
