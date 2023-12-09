@@ -53,7 +53,7 @@ def run_conversation(prompt):
                     },
                   "rent_growth_per_year": {
                         "type": "number",
-                        "description": "Annual market rent growth (e.g. 3.00%)" ,
+                        "description": "Annual market rent growth (e.g. 0.03). The input must be in decimal form so convert 3% to 0.03" ,
                     },
                   "year_1_expense_ratio": {
                         "type": "number",
@@ -61,7 +61,7 @@ def run_conversation(prompt):
                     },
                   "expense_growth_per_year": {
                         "type": "number",
-                        "description": "Growth rate for the apartment building's expenses" ,
+                        "description": "Growth rate for the apartment building's expenses (e.g. 0.03). The input must be in decimal form so convert 3% to 0.03" ,
                     },
                   "capex_per_unit": {
                         "type": "number",
@@ -69,7 +69,7 @@ def run_conversation(prompt):
                     },
                   "exit_cap_rate": {
                         "type": "number",
-                        "description": "Exit capitalization rate used to determine the terminal value of the property in the cash flow" ,
+                        "description": "Exit capitalization rate used to determine the terminal value of the property in the cash flow. The input must be in decimal form so convert 3% to 0.03" ,
                     },
 
                 },
@@ -194,6 +194,18 @@ html_table = """
         <td>5%</td>
     </tr>
 </table>
+
+Example Prompt:</n>
+Calculate the IRR for an Investment with the Following Inputs:
+
+Unit Count: 20
+Purchase Price: $1,000,000
+Market Rent Per Unit: $1,200
+Rent Growth Per Year: 3%
+Year 1 Expense Ratio: 50%
+Expense Growth Per Year: 2%
+CapEx Per Unit: $500
+Exit Cap Rate: 5%
 """
 
 # Display HTML table in Streamlit app
