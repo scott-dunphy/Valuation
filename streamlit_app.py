@@ -132,21 +132,30 @@ def run_conversation(prompt):
 st.set_page_config(page_title='Multifamily AI IRR')
 st.title('Multifamily AI IRR')
 
-write_value = "Enter query"
-
-
 query_input = st.text_input("Enter your query: ")
+if query_input:
+  url = ''
+  irr = run_conversation(query_input)
+  
+  write_value = irr
+else:
+  write_value = ""
 
-url = ''
-irr = run_conversation(query_input)
-
-write_value = irr
 st.write(write_value)
-
-import streamlit as st
 
 # HTML code for the table
 html_table = """
+Example Prompt:</n>
+Calculate the IRR for an Investment with the Following Inputs:
+
+Unit Count: 20</n>
+Purchase Price: $1,000,000</n>
+Market Rent Per Unit: $1,200</n>
+Rent Growth Per Year: 3%</n>
+Year 1 Expense Ratio: 50%</n>
+Expense Growth Per Year: 2%</n>
+CapEx Per Unit: $500</n>
+Exit Cap Rate: 5%</n>
 <table border="1">
     <tr>
         <th>Parameter</th>
@@ -195,17 +204,7 @@ html_table = """
     </tr>
 </table>
 
-Example Prompt:</n>
-Calculate the IRR for an Investment with the Following Inputs:
 
-Unit Count: 20
-Purchase Price: $1,000,000
-Market Rent Per Unit: $1,200
-Rent Growth Per Year: 3%
-Year 1 Expense Ratio: 50%
-Expense Growth Per Year: 2%
-CapEx Per Unit: $500
-Exit Cap Rate: 5%
 """
 
 # Display HTML table in Streamlit app
