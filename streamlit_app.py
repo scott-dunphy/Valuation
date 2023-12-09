@@ -145,17 +145,17 @@ st.write(write_value)
 
 # HTML code for the table
 html_table = """
-Example Prompt:</n>
-Calculate the IRR for an Investment with the Following Inputs:
+Example Prompt:<br>
+Calculate the IRR for an Investment with the Following Inputs:<br><br>
+Unit Count: 20<br>
+Purchase Price: $1,000,000 <br>
+Market Rent Per Unit: $1,200<br>
+Rent Growth Per Year: 3%<br>
+Year 1 Expense Ratio: 50%<br>
+Expense Growth Per Year: 2%<br>
+CapEx Per Unit: $500<br>
+Exit Cap Rate: 5%<br>
 
-Unit Count: 20</br>
-Purchase Price: $1,000,000 </br></br>
-Market Rent Per Unit: $1,200</br>
-Rent Growth Per Year: 3%</br>
-Year 1 Expense Ratio: 50%</br>
-Expense Growth Per Year: 2%</br>
-CapEx Per Unit: $500</br>
-Exit Cap Rate: 5%</br>
 <table border="1">
     <tr>
         <th>Parameter</th>
