@@ -147,7 +147,7 @@ st.write(write_value)
 # HTML code for the table
 html_table = """
 <p>
-<br><br><br><br>
+<br><br>
 Example Prompt:<br>
 Calculate the IRR and cash flows for an Investment with the Following Inputs:<br><br>
 Unit Count: 20<br>
