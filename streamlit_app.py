@@ -151,7 +151,7 @@ Example Prompt:<br>
 Calculate the IRR and cash flows for an Investment with the Following Inputs:<br><br>
 Unit Count: 20<br>
 Purchase Price: $1,000,000<br>
-Market Rent / Unit: $1,200<br></n>
+Market Rent / Unit: $1,200<br>
 Rent Growth / Year: 3%<br>
 Year 1 Expense Ratio: 50%<br>
 Expense Growth / Year: 2%<br>
@@ -210,7 +210,7 @@ Exit Cap Rate: 5%<br>
 """
 
 # Display HTML table in Streamlit app
-st.markdown(html_table, unsafe_allow_html=True)
+st.markdown(html_table, unsafe_allow_html=False)
 
 
 
