@@ -145,9 +145,9 @@ st.write(write_value)
 
 # HTML code for the table
 html_table = """
-<br><br><br><br><br><br><br>
+<br><br><br><br>
 Example Prompt:<br>
-Calculate the IRR for an Investment with the Following Inputs:<br><br>
+Calculate the IRR and cash flows for an Investment with the Following Inputs:<br><br>
 Unit Count: 20<br>
 Purchase Price: $1,000,000 <br>
 Market Rent Per Unit: $1,200<br>
