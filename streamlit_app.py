@@ -132,8 +132,9 @@ def run_conversation(prompt):
 st.set_page_config(page_title='Multifamily AI IRR')
 st.title('Multifamily AI IRR')
 
-query_input = st.text_input("Enter your query: ") + ". Don't be verbose. If the user asks for cash flows put them in a table formatted as dollars with no decimals. Be sure to include revenue, expense, net operating income, capex, and net cash flow."
+query_input = st.text_input("Enter your query: ")
 if query_input:
+  query_input += ". Don't be verbose. If the user asks for cash flows put them in a table formatted as dollars with no decimals. Be sure to include revenue, expense, net operating income, capex, and net cash flow."
   url = ''
   irr = run_conversation(query_input)
   
