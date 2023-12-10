@@ -146,7 +146,7 @@ st.write(write_value)
 
 # HTML code for the table
 html_table = """
-<h3>
+<p>
 <br><br><br><br>
 Example Prompt:<br>
 Calculate the IRR and cash flows for an Investment with the Following Inputs:<br><br>
@@ -158,7 +158,7 @@ Year 1 Expense Ratio: 50%<br>
 Expense Growth / Year: 2%<br>
 CapEx Per Unit: $500<br>
 Exit Cap Rate: 5%<br>
-</h3>
+</p>
 <table border="1">
     <tr>
         <th>Parameter</th>
