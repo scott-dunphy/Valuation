@@ -160,7 +160,7 @@ Expense Growth per Year: 2%<br>
 CapEx Per Unit: $500<br>
 Exit Cap Rate: 5%<br>
 </p>
-<h3>API Function Parameters</h3><br>
+<h3>API Function Parameters</h3>
 <table border="1">
     <tr>
         <th>Parameter</th>
