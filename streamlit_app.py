@@ -149,7 +149,7 @@ st.write(write_value)
 html_table = """
 <p>
 <br><br>
-Example Prompt:<br>
+<strong>Example Prompt:</strong><br>
 Calculate the IRR and cash flows for an Investment with the Following Inputs:<br><br>
 Unit Count: 20<br>
 Purchase Price: $1,000,000<br>
@@ -160,7 +160,7 @@ Expense Growth per Year: 2%<br>
 CapEx Per Unit: $500<br>
 Exit Cap Rate: 5%<br>
 </p>
-<h3>API Function Parameters</h3>
+<strong>API Function Parameters</strong>
 <table border="1">
     <tr>
         <th>Parameter</th>
